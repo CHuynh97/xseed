@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package xseed;
+
+import "peer.proto";
+
+message ListPeersRequest {
+    string session_id = 1;
+}
+
+message ListPeersResponse {
+    repeated Peer peers = 1;
+}
+service DiscoveryService {
+    rpc ListPeers (ListPeersRequest) returns (ListPeersResponse);
+}
